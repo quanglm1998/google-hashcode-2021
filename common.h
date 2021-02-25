@@ -49,7 +49,7 @@ void read_input(const string& input_file) {
     cerr << "Maximum score = " << num_cars * (bonus + duration) << endl;
 }
 
-vector<pair<int, int>> sched[N];
+vector<vector<pair<int, int>>> sched;
 
 struct GreenLight {
     int mod;
@@ -70,6 +70,7 @@ void read_output(const string &output_file) {
     ifstream fi(output_file);
     int A;
     fi >> A;
+    sched.resize(num_nodes);
     assert(A >= 0 && A <= num_nodes);
     for (int i = 0; i < A; ++i) {
         int u;
