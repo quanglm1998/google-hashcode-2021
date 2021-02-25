@@ -18,6 +18,18 @@ int last[N];
 int eval(const string& input, const string& output) {
     read_input(input);
     read_output(output);
+    // gen green
+    // for (int i = 0; i < num_nodes; ++i) {
+    //     int k = sched[i].size();
+    //     if (k == 0) continue;
+    //     int cur = 0;
+    //     for (int j = 0; j < k; j++) {
+    //         green[sched[i][j].first] = {tot, cur, cur + sched[i][j].second - 1};
+    //         cur += sched[i][j].second;
+    //     }
+    // }
+
+
     fill(last, last + num_nodes, -1);
     for (int i = 0; i < num_cars; ++i) {
         events[0].push_back({i, 0, E[path[i][0]].to});
