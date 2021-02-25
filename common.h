@@ -44,5 +44,7 @@ void read_input() {
             path[i].push_back(name_to_edge_id[st]);
         }
     }
+
+    cerr << "Maximum score = " << num_cars * (bonus + duration) << endl;
 }
 
