@@ -23,13 +23,14 @@ int num_edges;
 int num_cars;
 int bonus;
 
-void read_input() {
-    ios::sync_with_stdio(false);
-    cin >> duration >> num_nodes >> num_edges >> num_cars >> bonus;
+void read_input(const string& input_file) {
+    // ios::sync_with_stdio(false);
+    ifstream fi(input_file);
+    fi >> duration >> num_nodes >> num_edges >> num_cars >> bonus;
     for (int i = 0; i < num_edges; ++i) {
-        cin >> E[i].from >> E[i].to;
-        cin >> E[i].name;
-        cin >> E[i].length;
+        fi >> E[i].from >> E[i].to;
+        fi >> E[i].name;
+        fi >> E[i].length;
         name_to_edge_id[E[i].name] = i;
 
         outgoing[E[i].from].push_back(i);
@@ -37,10 +38,10 @@ void read_input() {
     }
 
     for (int i = 0; i < num_cars; ++i) {
-        int p; cin >> p;
+        int p; fi >> p;
         while (p--) {
             string st;
-            cin >> st;
+            fi >> st;
             path[i].push_back(name_to_edge_id[st]);
         }
     }
@@ -48,3 +49,51 @@ void read_input() {
     cerr << "Maximum score = " << num_cars * (bonus + duration) << endl;
 }
 
+vector<pair<int, int>> sched[N];
+
+struct GreenLight {
+    int mod;
+    int l;
+    int r;
+
+    int getNearest(int u) {
+        int v = u % mod;
+        if (l <= v && r <= v) return u;
+        if (v < l) return u + l - v;
+        return l + mod - u;
+    }
+};
+
+GreenLight green[N];
+
+void read_output(const string &output_file) {
+    ifstream fi(output_file);
+    int A;
+    fi >> A:
+    assert(A >= 0 && A <= num_nodes);
+    for (int i = 0; i < A; ++i) {
+        int u;
+        fi >> u;
+        assert(u >= 0 && u < num_nodes);
+        int k;
+        fi >> k;
+        assert(k > 0);
+        int tot = 0;
+        for (int j = 0; j < k; j++) {
+            string street_name;
+            fi >> street_name;
+            assert(name_to_edge_id.count(street_name));
+            int edge_id = name_to_edge_id[street_name];
+            int t;
+            fi >> t;
+            assert(t >= 1 && t <= duration);
+            sched[u].push_back({edge_id, t});
+            tot += t;
+        }
+        int cur = 0;
+        for (int j = 0; j < k; j++) {
+            green[E[sched[u][j].first].to] = {tot, cur, cur + sched[u][j].second - 1};
+            cur += sched[u][j].second;
+        }
+    }
+}
