@@ -45,7 +45,7 @@ void read_input(const string& input_file) {
             path[i].push_back(name_to_edge_id[st]);
         }
     }
-
+    fi.close();
     cerr << "Maximum score = " << num_cars * (bonus + duration) << endl;
 }
 
@@ -69,7 +69,7 @@ GreenLight green[N];
 void read_output(const string &output_file) {
     ifstream fi(output_file);
     int A;
-    fi >> A:
+    fi >> A;
     assert(A >= 0 && A <= num_nodes);
     for (int i = 0; i < A; ++i) {
         int u;
@@ -96,4 +96,5 @@ void read_output(const string &output_file) {
             cur += sched[u][j].second;
         }
     }
+    fi.close();
 }

@@ -1,4 +1,4 @@
-g++ main.cpp -o main.out
+g++ main_dac.cpp -o main.out
 ./main.out <a.txt >a_out.txt
 ./main.out <b.txt >b_out.txt
 ./main.out <c.txt >c_out.txt
