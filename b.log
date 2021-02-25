@@ -1,0 +1,50 @@
+Maximum score = 6070000
+hist_cnt_edge| 0 1138
+hist_cnt_edge| 1 2424
+hist_cnt_edge| 2 1820
+hist_cnt_edge| 3 1203
+hist_cnt_edge| 4 775
+hist_cnt_edge| 5 587
+hist_cnt_edge| 6 345
+hist_cnt_edge| 7 283
+hist_cnt_edge| 8 160
+hist_cnt_edge| 9 94
+hist_cnt_edge| 10 37
+hist_cnt_edge| 11 61
+hist_cnt_edge| 12 19
+hist_cnt_edge| 13 40
+hist_cnt_edge| 14 30
+hist_cnt_edge| 15 7
+hist_cnt_edge| 16 11
+hist_cnt_edge| 17 9
+hist_cnt_edge| 18 20
+hist_cnt_edge| 19 10
+hist_cnt_edge| 20 7
+hist_cnt_edge| 21 8
+hist_cnt_edge| 23 2
+hist_cnt_edge| 24 3
+hist_cnt_edge| 25 1
+hist_cnt_edge| 26 7
+hist_cnt_edge| 29 1
+
+hist_deg_in| 1 5505
+hist_deg_in| 2 1248
+hist_deg_in| 3 229
+hist_deg_in| 4 66
+hist_deg_in| 5 13
+hist_deg_in| 6 4
+hist_deg_in| 7 6
+hist_deg_in| 8 1
+hist_deg_in| 11 1
+
+hist_deg_out| 1 5498
+hist_deg_out| 2 1278
+hist_deg_out| 3 215
+hist_deg_out| 4 49
+hist_deg_out| 5 13
+hist_deg_out| 6 9
+hist_deg_out| 7 7
+hist_deg_out| 8 2
+hist_deg_out| 11 1
+hist_deg_out| 12 1
+
