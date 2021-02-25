@@ -56,7 +56,10 @@ struct GreenLight {
     int l;
     int r;
 
+    GreenLight(int mod = 0, int l = 0, int r = 0) : mod(mod), l(l), r(r) {}
+
     int getNearest(int u) {
+        if (mod == 0) return 1e9;
         int v = u % mod;
         if (l <= v && r <= v) return u;
         if (v < l) return u + l - v;
