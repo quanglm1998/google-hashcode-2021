@@ -30,7 +30,7 @@ int eval(const string& input, const string& output) {
     // }
 
 
-    fill(last, last + num_nodes, -1);
+    fill(last, last + num_edges, -1);
     for (int i = 0; i < num_cars; ++i) {
         events[0].push_back({i, 0, E[path[i][0]].to});
     }
@@ -44,12 +44,13 @@ int eval(const string& input, const string& output) {
                 num++;
                 continue;
             }
-            int curTime = max(t, last[event.node_id] + 1);
+            int edge_id = path[event.car_id][event.path_id];
+            int curTime = max(t, last[edge_id] + 1);
             // cout << 
-            curTime = green[path[event.car_id][event.path_id]].getNearest(curTime);
+            curTime = green[edge_id].getNearest(curTime);
             // cout << t << ' ' << event.car_id << ' ' << event.path_id << ' ' << event.node_id << ' ' << curTime << endl;
-
-            last[event.node_id] = curTime;
+            // cout << event.path_id << ' ' << (int)path[event.car_id].size() << ' ' << curTime << endl;
+            last[edge_id] = curTime;
 
             Event nxt = event;
             nxt.path_id++;
