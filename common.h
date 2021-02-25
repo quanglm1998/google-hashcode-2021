@@ -93,7 +93,7 @@ void read_output(const string &output_file) {
         }
         int cur = 0;
         for (int j = 0; j < k; j++) {
-            green[E[sched[u][j].first].to] = {tot, cur, cur + sched[u][j].second - 1};
+            green[sched[u][j].first] = {tot, cur, cur + sched[u][j].second - 1};
             cur += sched[u][j].second;
         }
     }

@@ -33,14 +33,14 @@ int eval(const string& input, const string& output) {
                 continue;
             }
             int curTime = max(t, last[event.node_id] + 1);
-            curTime = green[event.node_id].getNearest(curTime);
+            curTime = green[path[event.car_id][event.path_id]].getNearest(curTime);
 
             last[event.node_id] = curTime;
 
             Event nxt = event;
             nxt.path_id++;
-            nxt.node_id = E[path[event.car_id][event.path_id]].to;
-            int nxtTime = curTime + E[path[event.car_id][event.path_id]].length;
+            nxt.node_id = E[path[nxt.car_id][nxt.path_id]].to;
+            int nxtTime = curTime + E[path[nxt.car_id][nxt.path_id]].length;
             if (nxtTime <= duration) {
                 events[nxtTime].push_back(nxt);
             }
