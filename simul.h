@@ -45,7 +45,9 @@ int eval(const string& input, const string& output) {
                 continue;
             }
             int curTime = max(t, last[event.node_id] + 1);
+            // cout << 
             curTime = green[path[event.car_id][event.path_id]].getNearest(curTime);
+            // cout << t << ' ' << event.car_id << ' ' << event.path_id << ' ' << event.node_id << ' ' << curTime << endl;
 
             last[event.node_id] = curTime;
 
