@@ -1,0 +1,28 @@
+Maximum score = 1176000
+hist_cnt_edge| 0 42
+hist_cnt_edge| 1 95
+hist_cnt_edge| 2 135
+hist_cnt_edge| 3 135
+hist_cnt_edge| 4 116
+hist_cnt_edge| 5 98
+hist_cnt_edge| 6 57
+hist_cnt_edge| 7 79
+hist_cnt_edge| 8 62
+hist_cnt_edge| 9 53
+hist_cnt_edge| 10 42
+hist_cnt_edge| 11 34
+hist_cnt_edge| 12 20
+hist_cnt_edge| 13 11
+hist_cnt_edge| 14 10
+hist_cnt_edge| 15 6
+hist_cnt_edge| 16 2
+hist_cnt_edge| 20 1
+
+hist_deg_in| 1 250
+hist_deg_in| 2 249
+hist_deg_in| 250 1
+
+hist_deg_out| 1 249
+hist_deg_out| 2 250
+hist_deg_out| 249 1
+
