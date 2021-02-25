@@ -60,7 +60,7 @@ struct GreenLight {
         int v = u % mod;
         if (l <= v && r <= v) return u;
         if (v < l) return u + l - v;
-        return l + mod - u;
+        return u + l + mod - v;
     }
 };
 
